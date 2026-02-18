@@ -1,0 +1,1810 @@
+2026-02-18 18:33:55 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:33:55 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:33:59 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:33:59 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:34:09 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-3 (process_request_thread), started daemon 124949895407296)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38508)>, ('127.0.0.1', 38508))
+    │    │        └ <Thread(Thread-3 (process_request_thread), started daemon 124949895407296)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-3 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 38508)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38508)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 38508)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38508)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42c0bb200>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42c0bb200>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42c0bb200>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42c0bb200>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a42aaf11c0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1120>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1120>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:34:09 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-4 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-4 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-4 (process_request_thread), started daemon 124949895407296)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38516)>, ('127.0.0.1', 38516))
+    │    │        └ <Thread(Thread-4 (process_request_thread), started daemon 124949895407296)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-4 (process_request_thread), started daemon 124949895407296)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 38516)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38516)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 38516)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 38516)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05520>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05520>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05520>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05520>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a42aaf14e0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1760>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1760>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:34:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:34:56 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:35:47 | WARNING  | __main__:login:449 - ❌ Неверный логин или пароль при попытке входа
+2026-02-18 18:35:48 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-6 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-6 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-6 (process_request_thread), started daemon 124949885966016)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55118)>, ('127.0.0.1', 55118))
+    │    │        └ <Thread(Thread-6 (process_request_thread), started daemon 124949885966016)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-6 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 55118)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55118)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 55118)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55118)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ad91190>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ad91190>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ad91190>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ad91190>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a42aaf1da0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1940>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1940>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:35:48 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-7 (process_request_thread), started daemon 124949885966016)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55130)>, ('127.0.0.1', 55130))
+    │    │        └ <Thread(Thread-7 (process_request_thread), started daemon 124949885966016)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-7 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 55130)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55130)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 55130)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 55130)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab49b0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab49b0>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab49b0>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab49b0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4381645e0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1760>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a42aaf1760>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:35:54 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-8 (process_request_thread), started daemon 124949885966016)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35738)>, ('127.0.0.1', 35738))
+    │    │        └ <Thread(Thread-8 (process_request_thread), started daemon 124949885966016)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-8 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 35738)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35738)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 35738)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35738)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05670>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05670>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05670>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab05670>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c8220>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c85e0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c85e0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:35:54 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-9 (process_request_thread), started daemon 124949885966016)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35742)>, ('127.0.0.1', 35742))
+    │    │        └ <Thread(Thread-9 (process_request_thread), started daemon 124949885966016)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-9 (process_request_thread), started daemon 124949885966016)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 35742)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35742)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 35742)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 35742)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d20>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d20>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d20>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d20>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c8b80>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8ae0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8ae0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:35:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:35:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:36:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:36:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:37:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:37:56 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:38:55 | SUCCESS  | __main__:update_sklad_task:128 - 🔁 Обновление склада через update_sklad.py...
+2026-02-18 18:38:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:38:55 | INFO     | update_sklad:gen_sklad:38 - 🚀 Генерация данных со склада (Google Sheets)
+2026-02-18 18:38:55 | ERROR    | __main__:update_sklad_task:158 - ❌ Ошибка при обновлении склада
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    │        │    └ (<weakref at 0x71a42999b6f0; to 'ThreadPoolExecutor' at 0x71a42ab761e0>, <_queue.SimpleQueue object at 0x71a42aad3fb0>, None,...
+    │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    └ <function _worker at 0x71a436a318a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 92, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x71a436a319e0>
+    └ <concurrent.futures.thread._WorkItem object at 0x71a42ab07fe0>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x71a42ab07fe0>
+             │    │   │    └ (<Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>, 'default', [datetime.datetime(2026, 2, 18, 18, 38, 55, 7...
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x71a42ab07fe0>
+             │    └ <function run_job at 0x71a438316020>
+             └ <concurrent.futures.thread._WorkItem object at 0x71a42ab07fe0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             │   │     │   │       │   └ <member 'kwargs' of 'Job' objects>
+             │   │     │   │       └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   │     │   └ <member 'args' of 'Job' objects>
+             │   │     └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   └ <member 'func' of 'Job' objects>
+             └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+
+> File "/workspaces/YMWB/web_app.py", line 131, in update_sklad_task
+    df = gen_sklad()
+         └ <function gen_sklad at 0x71a4380e3ec0>
+
+  File "/workspaces/YMWB/update_sklad.py", line 41, in gen_sklad
+    gc = gspread.service_account(filename='System/my-python-397519-3688db4697d6.json')
+         │       └ <function service_account at 0x71a42be8bba0>
+         └ <module 'gspread' from '/home/codespace/.local/lib/python3.12/site-packages/gspread/__init__.py'>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/gspread/auth.py", line 323, in service_account
+    creds = SACredentials.from_service_account_file(filename, scopes=scopes)
+            │             │                         │                └ ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+            │             │                         └ 'System/my-python-397519-3688db4697d6.json'
+            │             └ <classmethod(<function Credentials.from_service_account_file at 0x71a42c195da0>)>
+            └ <class 'google.oauth2.service_account.Credentials'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/oauth2/service_account.py", line 262, in from_service_account_file
+    info, signer = _service_account_info.from_filename(
+                   │                     └ <function from_filename at 0x71a42cfecfe0>
+                   └ <module 'google.auth._service_account_info' from '/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_ac...
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_account_info.py", line 78, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+         │  │    └ 'System/my-python-397519-3688db4697d6.json'
+         │  └ <built-in function open>
+         └ <module 'io' (frozen)>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'System/my-python-397519-3688db4697d6.json'
+2026-02-18 18:38:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:39:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:39:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:40:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:40:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:41:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:41:56 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:42:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:42:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:43:55 | WARNING  | __main__:login:449 - ❌ Неверный логин или пароль при попытке входа
+2026-02-18 18:43:55 | SUCCESS  | __main__:update_sklad_task:128 - 🔁 Обновление склада через update_sklad.py...
+2026-02-18 18:43:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:43:55 | INFO     | update_sklad:gen_sklad:38 - 🚀 Генерация данных со склада (Google Sheets)
+2026-02-18 18:43:55 | ERROR    | __main__:update_sklad_task:158 - ❌ Ошибка при обновлении склада
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    │        │    └ (<weakref at 0x71a42999b6f0; to 'ThreadPoolExecutor' at 0x71a42ab761e0>, <_queue.SimpleQueue object at 0x71a42aad3fb0>, None,...
+    │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    └ <function _worker at 0x71a436a318a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 92, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x71a436a319e0>
+    └ <concurrent.futures.thread._WorkItem object at 0x71a42ab06870>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x71a42ab06870>
+             │    │   │    └ (<Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>, 'default', [datetime.datetime(2026, 2, 18, 18, 43, 55, 7...
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x71a42ab06870>
+             │    └ <function run_job at 0x71a438316020>
+             └ <concurrent.futures.thread._WorkItem object at 0x71a42ab06870>
+  File "/home/codespace/.local/lib/python3.12/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             │   │     │   │       │   └ <member 'kwargs' of 'Job' objects>
+             │   │     │   │       └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   │     │   └ <member 'args' of 'Job' objects>
+             │   │     └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   └ <member 'func' of 'Job' objects>
+             └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+
+> File "/workspaces/YMWB/web_app.py", line 131, in update_sklad_task
+    df = gen_sklad()
+         └ <function gen_sklad at 0x71a4380e3ec0>
+
+  File "/workspaces/YMWB/update_sklad.py", line 41, in gen_sklad
+    gc = gspread.service_account(filename='System/my-python-397519-3688db4697d6.json')
+         │       └ <function service_account at 0x71a42be8bba0>
+         └ <module 'gspread' from '/home/codespace/.local/lib/python3.12/site-packages/gspread/__init__.py'>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/gspread/auth.py", line 323, in service_account
+    creds = SACredentials.from_service_account_file(filename, scopes=scopes)
+            │             │                         │                └ ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+            │             │                         └ 'System/my-python-397519-3688db4697d6.json'
+            │             └ <classmethod(<function Credentials.from_service_account_file at 0x71a42c195da0>)>
+            └ <class 'google.oauth2.service_account.Credentials'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/oauth2/service_account.py", line 262, in from_service_account_file
+    info, signer = _service_account_info.from_filename(
+                   │                     └ <function from_filename at 0x71a42cfecfe0>
+                   └ <module 'google.auth._service_account_info' from '/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_ac...
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_account_info.py", line 78, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+         │  │    └ 'System/my-python-397519-3688db4697d6.json'
+         │  └ <built-in function open>
+         └ <module 'io' (frozen)>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'System/my-python-397519-3688db4697d6.json'
+2026-02-18 18:43:55 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=8, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54026)>, ('127.0.0.1', 54026))
+    │    │        └ <Thread(Thread-11 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-11 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54026)
+    │    │              └ <socket.socket fd=8, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54026)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 54026)
+    │    │                   └ <socket.socket fd=8, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54026)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab068a0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab068a0>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab068a0>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab068a0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c85e0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c84a0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=8>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c84a0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=8>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:43:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:43:56 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-12 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-12 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-12 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54038)>, ('127.0.0.1', 54038))
+    │    │        └ <Thread(Thread-12 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-12 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54038)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54038)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 54038)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 54038)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab75610>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab75610>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab75610>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab75610>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c8540>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c82c0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c82c0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:44:08 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:44:08 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:44:31 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:44:31 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:44:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:44:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:45:31 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:45:31 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:45:51 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-15 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58950)>, ('127.0.0.1', 58950))
+    │    │        └ <Thread(Thread-15 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-15 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58950)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58950)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 58950)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58950)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42be8e480>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42be8e480>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42be8e480>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42be8e480>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c9260>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8fe0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8fe0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:45:51 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-16 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-16 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-16 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58952)>, ('127.0.0.1', 58952))
+    │    │        └ <Thread(Thread-16 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-16 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58952)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58952)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 58952)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 58952)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab4740>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab4740>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab4740>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab4740>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c94e0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9760>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9760>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:45:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:45:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:46:03 | WARNING  | __main__:login:449 - ❌ Неверный логин или пароль при попытке входа
+2026-02-18 18:46:03 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-18 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-18 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-18 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53800)>, ('127.0.0.1', 53800))
+    │    │        └ <Thread(Thread-18 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-18 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53800)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53800)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 53800)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53800)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a4288145c0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a4288145c0>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a4288145c0>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a4288145c0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c9da0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9d00>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9d00>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:46:03 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-19 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53802)>, ('127.0.0.1', 53802))
+    │    │        └ <Thread(Thread-19 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-19 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53802)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53802)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 53802)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53802)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab5280>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab5280>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab5280>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42aab5280>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299ca020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9f80>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9f80>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:46:08 | WARNING  | __main__:login:449 - ❌ Неверный логин или пароль при попытке входа
+2026-02-18 18:46:09 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-21 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-21 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-21 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59890)>, ('127.0.0.1', 59890))
+    │    │        └ <Thread(Thread-21 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-21 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 59890)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59890)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 59890)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59890)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42bea8440>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42bea8440>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42bea8440>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42bea8440>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c9580>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9760>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c9760>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:46:09 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-22 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-22 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-22 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59898)>, ('127.0.0.1', 59898))
+    │    │        └ <Thread(Thread-22 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-22 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 59898)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59898)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 59898)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 59898)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d50>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d50>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d50>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab06d50>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c8c20>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c98a0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c98a0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'favicon'
+           │    │           │    │              └ <Rule '/favicon.ico' (HEAD, OPTIONS, GET) -> favicon>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+
+  File "/workspaces/YMWB/web_app.py", line 320, in favicon
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:46:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:46:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:46:59 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:46:59 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
+2026-02-18 18:47:45 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-25 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-25 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-25 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53908)>, ('127.0.0.1', 53908))
+    │    │        └ <Thread(Thread-25 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-25 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53908)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53908)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 53908)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53908)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab07710>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab07710>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab07710>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a42ab07710>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299c8680>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8900>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8900>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:47:45 | ERROR    | __main__:handle_error:1320 - 💥 Ошибка: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(Thread-26 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(Thread-26 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-26 (process_request_thread), started daemon 124949877573312)>
+    │    │        │    └ (<socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53916)>, ('127.0.0.1', 53916))
+    │    │        └ <Thread(Thread-26 (process_request_thread), started daemon 124949877573312)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>>
+    └ <Thread(Thread-26 (process_request_thread), started daemon 124949877573312)>
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53916)
+    │    │              └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53916)>
+    │    └ <function BaseServer.finish_request at 0x71a4393287c0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │    │                   │        └ ('127.0.0.1', 53916)
+    │    │                   └ <socket.socket fd=5, family=2, type=1, proto=0, laddr=('127.0.0.1', 5050), raddr=('127.0.0.1', 53916)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x71a4389036a0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a428815160>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x71a438b36de0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x71a428815160>
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x71a428815160>>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'web_app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x71a42aa83e00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x71a428815160>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x71a4299ca2a0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8f40>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+                       └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x71a4299c8f40>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=5>, 'wsgi.errors': <_io.TextIOWrap...
+           │    └ <function Flask.wsgi_app at 0x71a4384bb880>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x71a4384bafc0>
+               └ <Flask 'web_app'>
+> File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x71a4384baf20>
+         └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {'filename': 'favicon.ico'}
+           │    │           │    │              │    └ 'static'
+           │    │           │    │              └ <Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x71a42aa9f060>, 'favicon': <function favicon at 0x71a42aa9f2e0>, 't...
+           │    │           └ <Flask 'web_app'>
+           │    └ <function Flask.ensure_sync at 0x71a4384bb1a0>
+           └ <Flask 'web_app'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 270, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                       │   │                             └ {'filename': 'favicon.ico'}
+                       │   └ <weakref at 0x71a42f306020; to 'Flask' at 0x71a42adbdd00>
+                       └ {'filename': 'favicon.ico'}
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/app.py", line 318, in send_static_file
+    return send_from_directory(
+           └ <function send_from_directory at 0x71a4384fa020>
+  File "/home/codespace/.local/lib/python3.12/site-packages/flask/helpers.py", line 552, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           │        │     └ <function send_from_directory at 0x71a438961a80>
+           │        └ <module 'werkzeug.utils' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py'>
+           └ <module 'werkzeug' from '/home/codespace/.local/lib/python3.12/site-packages/werkzeug/__init__.py'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/werkzeug/utils.py", line 568, in send_from_directory
+    raise NotFound()
+          └ <class 'werkzeug.exceptions.NotFound'>
+
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-18 18:47:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:47:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:48:55 | SUCCESS  | __main__:update_sklad_task:128 - 🔁 Обновление склада через update_sklad.py...
+2026-02-18 18:48:55 | INFO     | update_sklad:gen_sklad:38 - 🚀 Генерация данных со склада (Google Sheets)
+2026-02-18 18:48:55 | ERROR    | __main__:update_sklad_task:158 - ❌ Ошибка при обновлении склада
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/threading.py", line 1030, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x71a439326ac0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x71a4393267a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    │        │    └ (<weakref at 0x71a42999b6f0; to 'ThreadPoolExecutor' at 0x71a42ab761e0>, <_queue.SimpleQueue object at 0x71a42aad3fb0>, None,...
+    │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+    │    └ <function _worker at 0x71a436a318a0>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 124949895407296)>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 92, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x71a436a319e0>
+    └ <concurrent.futures.thread._WorkItem object at 0x71a42bdcd3d0>
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x71a42bdcd3d0>
+             │    │   │    └ (<Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>, 'default', [datetime.datetime(2026, 2, 18, 18, 48, 55, 7...
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x71a42bdcd3d0>
+             │    └ <function run_job at 0x71a438316020>
+             └ <concurrent.futures.thread._WorkItem object at 0x71a42bdcd3d0>
+  File "/home/codespace/.local/lib/python3.12/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             │   │     │   │       │   └ <member 'kwargs' of 'Job' objects>
+             │   │     │   │       └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   │     │   └ <member 'args' of 'Job' objects>
+             │   │     └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+             │   └ <member 'func' of 'Job' objects>
+             └ <Job (id=4b96fc67b05a4838a1d86fb0949c37e4 name=update_sklad_task)>
+
+> File "/workspaces/YMWB/web_app.py", line 131, in update_sklad_task
+    df = gen_sklad()
+         └ <function gen_sklad at 0x71a4380e3ec0>
+
+  File "/workspaces/YMWB/update_sklad.py", line 41, in gen_sklad
+    gc = gspread.service_account(filename='System/my-python-397519-3688db4697d6.json')
+         │       └ <function service_account at 0x71a42be8bba0>
+         └ <module 'gspread' from '/home/codespace/.local/lib/python3.12/site-packages/gspread/__init__.py'>
+
+  File "/home/codespace/.local/lib/python3.12/site-packages/gspread/auth.py", line 323, in service_account
+    creds = SACredentials.from_service_account_file(filename, scopes=scopes)
+            │             │                         │                └ ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
+            │             │                         └ 'System/my-python-397519-3688db4697d6.json'
+            │             └ <classmethod(<function Credentials.from_service_account_file at 0x71a42c195da0>)>
+            └ <class 'google.oauth2.service_account.Credentials'>
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/oauth2/service_account.py", line 262, in from_service_account_file
+    info, signer = _service_account_info.from_filename(
+                   │                     └ <function from_filename at 0x71a42cfecfe0>
+                   └ <module 'google.auth._service_account_info' from '/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_ac...
+  File "/home/codespace/.local/lib/python3.12/site-packages/google/auth/_service_account_info.py", line 78, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+         │  │    └ 'System/my-python-397519-3688db4697d6.json'
+         │  └ <built-in function open>
+         └ <module 'io' (frozen)>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'System/my-python-397519-3688db4697d6.json'
+2026-02-18 18:48:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 18:48:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 18:48:58 | INFO     | __main__:<module>:1463 - 📅 Планировщик запущен (обновление склада каждые 5 минут)
+2026-02-18 18:48:58 | INFO     | __main__:<module>:1464 - 🚀 Приложение запущено
