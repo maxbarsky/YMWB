@@ -4956,3 +4956,7 @@ werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on 
 🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
 
 2026-02-18 19:06:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
+2026-02-18 19:07:55 | INFO     | ozon_actions:remove_all_products_from_all_actions:42 - 
+🚨 НАЧАЛО: отключение всех товаров из всех активных акций на Ozon
+
+2026-02-18 19:07:55 | ERROR    | ozon_actions:remove_all_products_from_all_actions:46 - ❌ Ошибка при получении списка акций: 401 — {"code":16,"message":"Client-Id and Api-Key headers are required"}
