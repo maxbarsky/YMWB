@@ -1462,5 +1462,5 @@ if __name__ == '__main__':
         scheduler.start()
         logger.info("📅 Планировщик запущен (обновление склада каждые 5 минут)")
     logger.info("🚀 Приложение запущено")
-    app.run(host="127.0.0.1", port=5050, debug=False, use_reloader=False)
+    app.run(host="127.0.0.1", port=5051, debug=True, use_reloader=False)
 
